@@ -1,0 +1,697 @@
+/* =====================================================
+   ROOT COLORS
+===================================================== */
+
+        :root {
+
+            --space-black: #050507;
+            --hull-gray-dark: #12141c;
+            --hull-gray-light: #222533;
+
+            --starlight-white: #ffffff;
+            --hud-gray: #5a6175;
+
+            --hud-text: #d1d5db;
+
+        }
+
+
+
+        /* =====================================================
+   BODY
+===================================================== */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            margin: 0;
+
+            overflow: hidden;
+
+            background: var(--space-black);
+
+            font-family: 'Rajdhani', sans-serif;
+
+            color: #d1d5db;
+
+        }
+
+
+
+        /* =====================================================
+   SPACE BACKGROUND
+===================================================== */
+
+        #bg {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 200%;
+
+            z-index: 1;
+
+            background:
+
+                radial-gradient(circle at center,
+                    #111424 0%,
+                    var(--space-black) 70%),
+
+                radial-gradient(white,
+                    rgba(255, 255, 255, .2) 2px,
+                    transparent 40px),
+
+                radial-gradient(white,
+                    rgba(255, 255, 255, .15) 1px,
+                    transparent 30px);
+
+            background-size:
+
+                100% 100%,
+                550px 550px,
+                350px 350px;
+
+            opacity: 0.5;
+
+            animation:
+                moveSpace 120s linear infinite;
+
+        }
+
+
+
+        @keyframes moveSpace {
+
+            from {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            to {
+
+                transform:
+                    translateY(-50%);
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+   HUD GRID
+===================================================== */
+
+        .hud-grid {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-image:
+
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px,
+                    transparent 1px),
+
+                linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.02) 1px,
+                    transparent 1px);
+
+            background-size:
+                100px 100px;
+
+            pointer-events: none;
+
+            z-index: 2;
+
+        }
+
+
+
+        /* =====================================================
+   SYSTEM ACCESS
+===================================================== */
+
+        .btn-system {
+
+            position: absolute;
+
+            top: 30px;
+            right: 30px;
+
+            z-index: 210;
+
+            background: transparent;
+
+            color: white;
+
+            padding: 12px 25px;
+
+            border:
+                1px solid white;
+
+            font-family:
+                'Orbitron',
+                sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            box-shadow:
+                0 0 15px rgba(255, 255, 255, 0.1);
+
+        }
+
+
+
+        /* =====================================================
+   TOP GAME HUD
+===================================================== */
+
+        #ui {
+
+            position: absolute;
+
+            top: 30px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            z-index: 10;
+
+            text-align: center;
+
+            width: 100%;
+
+        }
+
+
+
+        .stat-bar {
+
+            display: inline-flex;
+
+            gap: 35px;
+
+            background:
+                rgba(0, 0, 0, 0.8);
+
+            padding:
+                10px 40px;
+
+            border:
+                1px solid var(--hud-gray);
+
+            font-family:
+                'Orbitron',
+                sans-serif;
+
+            letter-spacing: 1px;
+
+            clip-path:
+
+                polygon(5% 0,
+                    100% 0,
+                    95% 100%,
+                    0% 100%);
+
+        }
+
+
+
+        .stat-item {
+
+            color: #a3aed0;
+
+            font-size: 12px;
+
+        }
+
+
+
+        .stat-item span {
+
+            color: white;
+
+            font-weight: 700;
+
+            font-size: 24px;
+
+        }
+
+
+
+        /* =====================================================
+   CANVAS
+===================================================== */
+
+        canvas {
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            z-index: 3;
+
+        }
+
+
+
+        /* =====================================================
+   GAME CONTAINER
+===================================================== */
+
+        #game-container {
+
+            position: relative;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 4;
+
+        }
+
+
+
+        /* =====================================================
+   CAMERA PREVIEW
+===================================================== */
+
+        #video-container {
+
+            position: fixed;
+
+            bottom: 30px;
+            right: 30px;
+
+            width: 180px;
+            height: 135px;
+
+            z-index: 200;
+
+        }
+
+
+
+        #video-preview {
+
+            width: 100%;
+            height: 100%;
+
+            background: black;
+
+            border:
+                1px solid var(--hud-gray);
+
+            transform:
+                scaleX(-1);
+
+            opacity: 0.8;
+
+            object-fit: cover;
+
+        }
+
+
+
+        /* =====================================================
+   POPUP OVERLAY
+===================================================== */
+
+        #popupOverlay {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background:
+                rgba(0, 0, 0, 0.78);
+
+            z-index: 500;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+
+        /* =====================================================
+   POPUP BOX
+===================================================== */
+
+        .popup-box {
+
+            width: 600px;
+
+            max-width: 90%;
+
+            background:
+
+                linear-gradient(145deg,
+                    #151924,
+                    #08090d);
+
+            border:
+                1px solid #5a6175;
+
+            padding: 45px;
+
+            text-align: center;
+
+            box-shadow:
+
+                0 0 30px rgba(255, 255, 255, 0.08);
+
+            font-family:
+                'Orbitron',
+                sans-serif;
+
+        }
+
+
+
+        .popup-title {
+
+            font-size: 30px;
+
+            color: white;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .popup-text {
+
+            font-family:
+                'Rajdhani',
+                sans-serif;
+
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            color: #b8c0d0;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        /* =====================================================
+   POPUP BUTTON
+===================================================== */
+
+        .popup-btn {
+
+            width: 220px;
+
+            padding: 15px;
+
+            margin: 10px;
+
+            background: transparent;
+
+            border:
+                1px solid white;
+
+            color: white;
+
+            font-family:
+                'Orbitron',
+                sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .popup-btn:hover {
+
+            background:
+                rgba(255, 255, 255, 0.1);
+
+            box-shadow:
+
+                0 0 20px rgba(255, 255, 255, 0.25);
+
+            transform:
+                scale(1.04);
+
+        }
+
+
+
+        /* =====================================================
+   TIME OPTIONS
+===================================================== */
+
+        .time-options {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+
+        .time-option {
+
+            width: 350px;
+
+            max-width: 100%;
+
+            padding: 18px;
+
+            margin: 10px;
+
+            background:
+                rgba(255, 255, 255, 0.03);
+
+            border:
+                1px solid #5a6175;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-family:
+                'Orbitron',
+                sans-serif;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .time-option:hover {
+
+            border-color: white;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            box-shadow:
+
+                0 0 20px rgba(255, 255, 255, 0.15);
+
+            transform:
+                scale(1.03);
+
+        }
+
+
+
+        .time-option strong {
+
+            font-size: 18px;
+
+        }
+
+
+
+        .time-option span {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color: #a3aed0;
+
+            font-size: 13px;
+
+        }
+
+
+
+        /* =====================================================
+   CENTER MESSAGE
+===================================================== */
+
+        #msg-overlay {
+
+            position: absolute;
+
+            top: 40%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            font-family:
+                'Orbitron',
+                sans-serif;
+
+            font-size: 3.5rem;
+
+            font-weight: 700;
+
+            color: white;
+
+            letter-spacing: 6px;
+
+            text-shadow:
+
+                0 0 20px rgba(255, 255, 255, 0.3);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition:
+                0.5s;
+
+            z-index: 100;
+
+        }
+
+
+
+        .show-msg {
+
+            opacity: 1 !important;
+
+            transform:
+
+                translate(-50%, -50%) scale(1.05) !important;
+
+        }
+
+
+
+        /* =====================================================
+   MOBILE
+===================================================== */
+
+        @media (max-width: 700px) {
+
+
+
+            .stat-bar {
+
+                gap: 15px;
+
+                padding:
+                    10px 20px;
+
+            }
+
+
+
+            .stat-item span {
+
+                font-size: 16px;
+
+            }
+
+
+
+            #video-container {
+
+                width: 120px;
+                height: 90px;
+
+            }
+
+
+
+            .popup-title {
+
+                font-size: 22px;
+
+            }
+
+
+
+            #msg-overlay {
+
+                font-size: 2rem;
+
+                text-align: center;
+
+                width: 90%;
+
+            }
+
+        }
+/* Touch-friendly active states for mobile */
+@media (hover: none) {
+    .popup-btn:active { background: rgba(255,255,255,0.12); transform: scale(0.97); }
+    .time-option:active { background: rgba(255,255,255,0.08); transform: scale(0.98); }
+}
+
+/* Better popup on small screens */
+@media (max-width: 480px) {
+    .popup-box { padding: 24px 14px; }
+    .popup-btn { width: 100%; max-width: 100%; margin: 6px 0; display: block; }
+    .popup-title { font-size: 18px; letter-spacing: 2px; }
+    .popup-text { font-size: 16px; }
+    .time-option { width: 100%; }
+    #video-container { width: 100px; height: 75px; bottom: 10px; right: 10px; }
+}

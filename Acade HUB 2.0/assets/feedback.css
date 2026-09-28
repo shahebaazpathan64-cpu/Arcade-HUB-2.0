@@ -1,0 +1,1146 @@
+﻿/* =====================================================
+   ROOT
+===================================================== */
+
+        :root {
+
+            --space-black: #050507;
+
+            --hull-dark: #12141c;
+
+            --hull-light: #222533;
+
+            --white: #ffffff;
+
+            --hud-gray: #5a6175;
+
+            --text-gray: #aeb6c8;
+
+            --cyan: #00d9ff;
+
+            --cyan-dark: #006f8a;
+
+            --success: #00ff9d;
+
+            --danger: #ff4757;
+
+        }
+
+
+        /* =====================================================
+   RESET
+===================================================== */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* =====================================================
+   BODY
+===================================================== */
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            background:
+                var(--space-black);
+
+            color:
+                var(--white);
+
+            font-family:
+                'Rajdhani',
+                sans-serif;
+
+        }
+
+
+        /* =====================================================
+   SPACE BACKGROUND
+===================================================== */
+
+        #bg {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 200%;
+
+            z-index: -3;
+
+            background:
+
+                radial-gradient(circle at center,
+                    #111424 0%,
+                    var(--space-black) 70%),
+
+                radial-gradient(white,
+                    rgba(255, 255, 255, .15) 2px,
+                    transparent 40px),
+
+                radial-gradient(white,
+                    rgba(255, 255, 255, .12) 1px,
+                    transparent 30px);
+
+            background-size:
+
+                100% 100%,
+
+                550px 550px,
+
+                350px 350px;
+
+            opacity:
+                0.65;
+
+            animation:
+                moveSpace 120s linear infinite;
+
+        }
+
+
+        @keyframes moveSpace {
+
+            from {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            to {
+
+                transform:
+                    translateY(-50%);
+
+            }
+
+        }
+
+
+        /* =====================================================
+   HUD GRID
+===================================================== */
+
+        .hud-grid {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            z-index: -2;
+
+            pointer-events:
+                none;
+
+            background-image:
+
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px),
+
+                linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px);
+
+            background-size:
+                100px 100px;
+
+        }
+
+
+        /* =====================================================
+   TOP SYSTEM ACCESS
+===================================================== */
+
+        .system-access {
+
+            position: fixed;
+
+            top: 30px;
+
+            right: 30px;
+
+            padding:
+
+                12px 25px;
+
+            border:
+
+                1px solid white;
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                11px;
+
+            font-weight:
+
+                700;
+
+            letter-spacing:
+
+                2px;
+
+            color:
+
+                white;
+
+            background:
+
+                rgba(0, 0, 0, 0.5);
+
+            box-shadow:
+
+                0 0 15px rgba(255, 255, 255, 0.1);
+
+        }
+
+
+        /* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+        .feedback-page {
+
+            width:
+
+                100%;
+
+            min-height:
+
+                100vh;
+
+            display:
+
+                flex;
+
+            flex-direction:
+
+                column;
+
+            align-items:
+
+                center;
+
+            justify-content:
+
+                center;
+
+            padding:
+
+                100px 20px 50px;
+
+        }
+
+
+        /* =====================================================
+   HUD LABEL
+===================================================== */
+
+        .hud-label {
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                11px;
+
+            letter-spacing:
+
+                4px;
+
+            color:
+
+                #7f8aa3;
+
+            margin-bottom:
+
+                18px;
+
+        }
+
+
+        /* =====================================================
+   TITLE
+===================================================== */
+
+        .feedback-title {
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                42px;
+
+            letter-spacing:
+
+                6px;
+
+            margin:
+
+                0;
+
+            text-align:
+
+                center;
+
+            color:
+
+                white;
+
+            text-shadow:
+
+                0 0 20px rgba(0, 217, 255, 0.25);
+
+        }
+
+
+        .feedback-subtitle {
+
+            margin:
+
+                15px 0 35px;
+
+            text-align:
+
+                center;
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                11px;
+
+            letter-spacing:
+
+                2px;
+
+            color:
+
+                #8d99ae;
+
+        }
+
+
+        /* =====================================================
+   FEEDBACK BOX
+===================================================== */
+
+        .feedback-box {
+
+            width:
+
+                700px;
+
+            max-width:
+
+                95%;
+
+            padding:
+
+                45px;
+
+            background:
+
+                linear-gradient(145deg,
+                    rgba(21, 25, 36, 0.96),
+                    rgba(8, 9, 13, 0.96));
+
+            border:
+
+                1px solid var(--hud-gray);
+
+            box-shadow:
+
+                0 0 35px rgba(0, 217, 255, 0.08);
+
+        }
+
+
+        /* =====================================================
+   PLAYER INFO
+===================================================== */
+
+        .player-info {
+
+            margin-bottom:
+
+                35px;
+
+            padding:
+
+                18px 20px;
+
+            background:
+
+                rgba(0, 217, 255, 0.05);
+
+            border:
+
+                1px solid rgba(0, 217, 255, 0.25);
+
+            text-align:
+
+                center;
+
+        }
+
+
+        .player-label {
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                10px;
+
+            letter-spacing:
+
+                3px;
+
+            color:
+
+                #7f8aa3;
+
+        }
+
+
+        .player-name {
+
+            margin-top:
+
+                10px;
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                20px;
+
+            font-weight:
+
+                700;
+
+            letter-spacing:
+
+                3px;
+
+            color:
+
+                var(--cyan);
+
+        }
+
+
+        /* =====================================================
+   SECTION TITLE
+===================================================== */
+
+        .section-title {
+
+            margin-bottom:
+
+                18px;
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                13px;
+
+            letter-spacing:
+
+                2px;
+
+            color:
+
+                white;
+
+        }
+
+
+        /* =====================================================
+   RATING OPTIONS
+===================================================== */
+
+        .rating-container {
+
+            display:
+
+                grid;
+
+            grid-template-columns:
+
+                repeat(10, 1fr);
+
+            gap:
+
+                8px;
+
+            margin-bottom:
+
+                12px;
+
+        }
+
+
+        .rating-btn {
+
+            height:
+
+                48px;
+
+            border:
+
+                1px solid var(--hud-gray);
+
+            background:
+
+                rgba(255, 255, 255, 0.03);
+
+            color:
+
+                #aeb6c8;
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                14px;
+
+            font-weight:
+
+                700;
+
+            cursor:
+
+                pointer;
+
+            transition:
+
+                0.25s;
+
+        }
+
+
+        .rating-btn:hover {
+
+            border-color:
+
+                var(--cyan);
+
+            color:
+
+                white;
+
+            box-shadow:
+
+                0 0 15px rgba(0, 217, 255, 0.25);
+
+            transform:
+
+                translateY(-2px);
+
+        }
+
+
+        .rating-btn.active {
+
+            background:
+
+                rgba(0, 217, 255, 0.18);
+
+            border-color:
+
+                var(--cyan);
+
+            color:
+
+                white;
+
+            box-shadow:
+
+                0 0 20px rgba(0, 217, 255, 0.35);
+
+        }
+
+
+        /* =====================================================
+   RATING TEXT
+===================================================== */
+
+        .rating-info {
+
+            text-align:
+
+                center;
+
+            margin-bottom:
+
+                35px;
+
+            color:
+
+                #7f8aa3;
+
+            font-size:
+
+                15px;
+
+        }
+
+
+        /* =====================================================
+   TEXTAREA
+===================================================== */
+
+        textarea {
+
+            width:
+
+                100%;
+
+            min-height:
+
+                150px;
+
+            resize:
+
+                vertical;
+
+            padding:
+
+                18px;
+
+            border:
+
+                1px solid var(--hud-gray);
+
+            outline:
+
+                none;
+
+            background:
+
+                rgba(0, 0, 0, 0.35);
+
+            color:
+
+                white;
+
+            font-family:
+
+                'Rajdhani',
+                sans-serif;
+
+            font-size:
+
+                18px;
+
+            line-height:
+
+                1.5;
+
+            transition:
+
+                0.3s;
+
+        }
+
+
+        textarea::placeholder {
+
+            color:
+
+                #7f8aa3;
+
+        }
+
+
+        textarea:focus {
+
+            border-color:
+
+                var(--cyan);
+
+            box-shadow:
+
+                0 0 20px rgba(0, 217, 255, 0.15);
+
+        }
+
+
+        /* =====================================================
+   CHARACTER COUNT
+===================================================== */
+
+        .character-count {
+
+            text-align:
+
+                right;
+
+            margin-top:
+
+                8px;
+
+            color:
+
+                #7f8aa3;
+
+            font-size:
+
+                13px;
+
+        }
+
+
+        /* =====================================================
+   MESSAGE
+===================================================== */
+
+        #message {
+
+            min-height:
+
+                28px;
+
+            margin:
+
+                20px 0 5px;
+
+            text-align:
+
+                center;
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                11px;
+
+            letter-spacing:
+
+                1px;
+
+        }
+
+
+        /* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+        .submit-btn {
+
+            width:
+
+                100%;
+
+            padding:
+
+                18px;
+
+            margin-top:
+
+                20px;
+
+            border:
+
+                1px solid var(--cyan);
+
+            background:
+
+                transparent;
+
+            color:
+
+                white;
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                13px;
+
+            font-weight:
+
+                700;
+
+            letter-spacing:
+
+                3px;
+
+            cursor:
+
+                pointer;
+
+            transition:
+
+                0.3s;
+
+        }
+
+
+        .submit-btn:hover {
+
+            background:
+
+                rgba(0, 217, 255, 0.12);
+
+            box-shadow:
+
+                0 0 25px rgba(0, 217, 255, 0.3);
+
+            transform:
+
+                scale(1.02);
+
+        }
+
+
+        .submit-btn:disabled {
+
+            opacity:
+
+                0.5;
+
+            cursor:
+
+                not-allowed;
+
+            transform:
+
+                none;
+
+        }
+
+
+        /* =====================================================
+   THANK YOU SCREEN
+===================================================== */
+
+        #thankYouScreen {
+
+            display:
+
+                none;
+
+            position:
+
+                fixed;
+
+            top:
+
+                0;
+
+            left:
+
+                0;
+
+            width:
+
+                100%;
+
+            height:
+
+                100%;
+
+            z-index:
+
+                100;
+
+            background:
+
+                rgba(2, 11, 15, 0.96);
+
+            align-items:
+
+                center;
+
+            justify-content:
+
+                center;
+
+            text-align:
+
+                center;
+
+            padding:
+
+                20px;
+
+        }
+
+
+        .thank-you-box {
+
+            width:
+
+                600px;
+
+            max-width:
+
+                95%;
+
+            padding:
+
+                50px;
+
+            border:
+
+                1px solid var(--hud-gray);
+
+            background:
+
+                linear-gradient(145deg,
+                    #151924,
+                    #08090d);
+
+            box-shadow:
+
+                0 0 40px rgba(0, 217, 255, 0.12);
+
+        }
+
+
+        .thank-you-title {
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                34px;
+
+            letter-spacing:
+
+                4px;
+
+            color:
+
+                var(--success);
+
+            margin-bottom:
+
+                25px;
+
+            text-shadow:
+
+                0 0 20px rgba(0, 255, 157, 0.25);
+
+        }
+
+
+        .thank-you-text {
+
+            color:
+
+                #b8c0d0;
+
+            font-size:
+
+                20px;
+
+            line-height:
+
+                1.6;
+
+        }
+
+
+        .home-btn {
+
+            margin-top:
+
+                30px;
+
+            padding:
+
+                15px 40px;
+
+            border:
+
+                1px solid white;
+
+            background:
+
+                transparent;
+
+            color:
+
+                white;
+
+            font-family:
+
+                'Orbitron',
+                sans-serif;
+
+            font-size:
+
+                11px;
+
+            letter-spacing:
+
+                2px;
+
+            cursor:
+
+                pointer;
+
+            transition:
+
+                0.3s;
+
+        }
+
+
+        .home-btn:hover {
+
+            background:
+
+                rgba(255, 255, 255, 0.08);
+
+            box-shadow:
+
+                0 0 20px rgba(255, 255, 255, 0.15);
+
+        }
+
+
+        /* =====================================================
+   RESPONSIVE
+===================================================== */
+
+        @media (max-width: 700px) {
+
+
+            .feedback-page {
+
+                padding:
+
+                    100px 12px 30px;
+
+            }
+
+
+            .feedback-title {
+
+                font-size:
+
+                    26px;
+
+                letter-spacing:
+
+                    3px;
+
+            }
+
+
+            .feedback-box {
+
+                padding:
+
+                    25px 18px;
+
+            }
+
+
+            .rating-container {
+
+                grid-template-columns:
+
+                    repeat(5, 1fr);
+
+            }
+
+
+            .system-access {
+
+                top:
+
+                    15px;
+
+                right:
+
+                    15px;
+
+                padding:
+
+                    9px 12px;
+
+                font-size:
+
+                    8px;
+
+            }
+
+
+        }
+/* Touch active states */
+@media (hover: none) {
+    .rating-btn:active { background: rgba(0,217,255,0.15); border-color: var(--cyan); transform: scale(0.96); }
+    .submit-btn:active { background: rgba(0,217,255,0.15); transform: scale(0.97); }
+    .home-btn:active { background: rgba(255,255,255,0.1); transform: scale(0.97); }
+}
+
+/* Small screen improvements */
+@media (max-width: 480px) {
+    .feedback-title { font-size: 22px; letter-spacing: 3px; }
+    .feedback-box { padding: 20px 14px; }
+    .rating-btn { height: 42px; font-size: 13px; }
+    .rating-container { gap: 5px; }
+    textarea { font-size: 16px; min-height: 120px; }
+    .system-access { font-size: 7px; padding: 8px 10px; top: 10px; right: 10px; }
+}

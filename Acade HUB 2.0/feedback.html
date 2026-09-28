@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#050507">
+
+    <title>ARCADE HUB - Feedback</title>
+
+
+    <!-- FONTS -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/feedback.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+    <div id="bg"></div>
+
+    <div class="hud-grid"></div>
+
+
+    <!-- =====================================================
+     SYSTEM ACCESS
+===================================================== -->
+
+    <div class="system-access">
+
+        FEEDBACK_SYSTEM
+
+    </div>
+
+
+    <!-- =====================================================
+     FEEDBACK PAGE
+===================================================== -->
+
+    <div class="feedback-page">
+
+
+        <div class="hud-label">
+
+            ARCADE HUB • PLAYER REVIEW
+
+        </div>
+
+
+        <h1 class="feedback-title">
+
+            MISSION FEEDBACK
+
+        </h1>
+
+
+        <p class="feedback-subtitle">
+
+            YOUR EXPERIENCE HELPS IMPROVE THE HUB
+
+        </p>
+
+
+        <div class="feedback-box">
+
+
+            <!-- PLAYER NAME -->
+
+            <div class="player-info">
+
+                <div class="player-label">
+
+                    PLAYER IDENTIFIED AS
+
+                </div>
+
+
+                <div class="player-name" id="playerName">
+
+                    PLAYER
+
+                </div>
+
+            </div>
+
+
+            <!-- RATING -->
+
+            <div class="section-title">
+
+                RATE YOUR ARCADE EXPERIENCE
+
+            </div>
+
+
+            <div class="rating-container" id="ratingContainer">
+
+                <button class="rating-btn" data-rating="1">
+                    1
+                </button>
+
+                <button class="rating-btn" data-rating="2">
+                    2
+                </button>
+
+                <button class="rating-btn" data-rating="3">
+                    3
+                </button>
+
+                <button class="rating-btn" data-rating="4">
+                    4
+                </button>
+
+                <button class="rating-btn" data-rating="5">
+                    5
+                </button>
+
+                <button class="rating-btn" data-rating="6">
+                    6
+                </button>
+
+                <button class="rating-btn" data-rating="7">
+                    7
+                </button>
+
+                <button class="rating-btn" data-rating="8">
+                    8
+                </button>
+
+                <button class="rating-btn" data-rating="9">
+                    9
+                </button>
+
+                <button class="rating-btn" data-rating="10">
+                    10
+                </button>
+
+            </div>
+
+
+            <div class="rating-info" id="ratingInfo">
+
+                SELECT A RATING FROM 1 TO 10
+
+            </div>
+
+
+            <!-- FEEDBACK -->
+
+            <div class="section-title">
+
+                SHARE YOUR FEEDBACK
+
+            </div>
+
+
+            <textarea id="feedbackText" maxlength="1000"
+                placeholder="Tell us what you liked, what could be improved, and how your Arcade HUB experience was..."></textarea>
+
+
+            <div class="character-count">
+
+                <span id="characterCount">
+
+                    0
+
+                </span>
+
+                / 1000
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div id="message"></div>
+
+
+            <!-- SUBMIT -->
+
+            <button class="submit-btn" id="submitBtn" onclick="submitFeedback()">
+
+                SUBMIT FEEDBACK
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+     THANK YOU SCREEN
+===================================================== -->
+
+    <div id="thankYouScreen">
+
+
+        <div class="thank-you-box">
+
+
+            <div class="thank-you-title">
+
+                THANK YOU!
+
+            </div>
+
+
+            <div class="thank-you-text">
+
+                YOUR FEEDBACK HAS BEEN
+                SUCCESSFULLY TRANSMITTED.
+
+                <br><br>
+
+                THANK YOU FOR PLAYING
+                ARCADE HUB.
+
+            </div>
+
+
+            <button class="home-btn" onclick="returnHome()">
+
+                RETURN HOME
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+    <script src="assets/page-transition.js"></script>
+    <script src="assets/sounds.js"></script>
+    <script src="assets/feedback.js"></script>
+
+
+</body>
+
+</html>

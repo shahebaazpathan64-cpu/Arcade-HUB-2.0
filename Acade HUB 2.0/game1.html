@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#050507">
+
+    <title>ARCADE HUB - Game 1</title>
+
+
+
+    <!-- =====================================
+     MEDIAPIPE
+===================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous">
+    </script>
+
+
+
+    <!-- =====================================
+     FONTS
+===================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/game1.css">
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+    <div id="bg"></div>
+
+    <div class="hud-grid"></div>
+
+
+
+    <!-- =====================================================
+     SYSTEM ACCESS
+===================================================== -->
+
+    <div class="btn-system">
+
+        SYSTEM_ACCESS
+
+    </div>
+
+
+
+    <!-- =====================================================
+     TOP GAME HUD
+===================================================== -->
+
+    <div id="ui">
+
+        <div class="stat-bar">
+
+
+
+            <div class="stat-item">
+
+                SCORE_
+
+                <span id="score">
+
+                    0
+
+                </span>
+
+                /
+
+                <span id="target">
+
+                    150
+
+                </span>
+
+            </div>
+
+
+
+            <div class="stat-item">
+
+                TIME_
+
+                <span id="timer">
+
+                    01:00
+
+                </span>
+
+            </div>
+
+
+
+            <div class="stat-item">
+
+                GAME_
+
+                <span id="stage">
+
+                    1
+
+                </span>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+     CENTER MESSAGE
+===================================================== -->
+
+    <div id="msg-overlay">
+
+        READY
+
+    </div>
+
+
+
+    <!-- =====================================================
+     GAME AREA
+===================================================== -->
+
+    <div id="game-container">
+
+
+
+        <!-- CAMERA -->
+
+        <div id="video-container">
+
+            <video id="video-preview" autoplay playsinline>
+
+            </video>
+
+        </div>
+
+
+
+        <!-- GAME CANVAS -->
+
+        <canvas id="gameCanvas">
+
+        </canvas>
+
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+     POPUP SYSTEM
+===================================================== -->
+
+    <div id="popupOverlay">
+
+        <div class="popup-box" id="popupBox">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+    <script src="assets/page-transition.js"></script>
+    <script src="assets/sounds.js"></script>
+    <script src="assets/game1.js"></script>
+
+
+
+</body>
+
+</html>
